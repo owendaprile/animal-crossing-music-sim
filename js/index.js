@@ -1,7 +1,7 @@
 function startPlayer() {
     player = document.getElementById("player");
 
-    player.src = "audio/ww/ww-" + new Date().getHours() + ".opus";
+    player.src = "audio/ww/" + new Date().getHours() + ".mp3";
 
     player.load();
 }
