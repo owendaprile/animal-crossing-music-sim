@@ -1,11 +1,11 @@
-function startPlayer(game) {
+function startPlayer(game, weather) {
     player = document.getElementById("player");
 
     audioPath = "audio/"
-    weather = "normal"
 
-    if (game == "nl") { audioPath += "nl/" + weather + "/"; }
+    if (game == "gc") { audioPath += "gc/"}
     if (game == "ww") { audioPath += "ww/"; }
+    if (game == "nl") { audioPath += "nl/" + weather + "/"; }
 
     audioPath += new Date().getHours();
     audioPath += ".mp3";
@@ -20,7 +20,7 @@ function checkTime() {
     currentHour = new Date().getHours();
 
     if (currentHour != prevHour) {
-        startPlayer();
+        updatePlayer();
         prevHour = currentHour;
     }
 }
@@ -37,12 +37,23 @@ function updateClock() {
 
 function getGame() { return document.getElementById("game-selector").value; }
 
-function updateGame() { startPlayer(getGame()) }
+function getWeather() { return document.getElementById("weather-selector").value; }
+
+function updatePlayer() {
+    game = getGame();
+    weather = getWeather();
+
+    if (game != "nl") { document.getElementById("weather-selector").disabled = true; }
+    else { document.getElementById("weather-selector").disabled = false; }
+
+    startPlayer(game, weather);
+}
 
 function main() {
     game = getGame();
+    weather = getWeather();
 
-    startPlayer(game);
+    startPlayer(game, weather);
     updateClock();
 
     prevHour = new Date().getHours();

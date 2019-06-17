@@ -19,10 +19,17 @@
 
 <body>
     <div id="container">
-        <select id="game-selector" onchange="updateGame()">
-            <option value=" " selected >Select a game</option>
+        <select id="game-selector" onchange="updatePlayer()">
+            <option value=" " selected>Select game</option>
+            <option value="gc">GameCube</option>
             <option value="ww">Wild World</option>
             <option value="nl">New Leaf</option>
+        </select>
+        <select id="weather-selector" onchange="updatePlayer()">
+            <option value=" " selected>Select weather</option>
+            <option value="normal">Clear</option>
+            <option value="rain">Rainy</option>
+            <option value="snow">Showy</option>
         </select>
         <div id="clock"></div>
         <audio id="player" controls="true" autoplay="true" loop="true"></audio>
