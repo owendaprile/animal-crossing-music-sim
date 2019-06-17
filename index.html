@@ -1,6 +1,9 @@
-<html>
+<!DOCTYPE html>
+
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Animal Crossing Music Simulator</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
@@ -16,6 +19,12 @@
 
 <body>
     <div id="container">
+        <select id="game-selector" onchange="updateGame()">
+            <option value=" " selected >Select a game</option>
+            <option value="ww">Wild World</option>
+            <option value="nl">New Leaf</option>
+        </select>
+        <div id="clock"></div>
         <audio id="player" controls="true" autoplay="true" loop="true"></audio>
     </div>
     <script src="js/index.js"></script>
