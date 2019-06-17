@@ -3,8 +3,9 @@ function startPlayer(game, weather) {
 
     audioPath = "audio/"
 
-    if (game == "gc") { audioPath += "gc/"}
+    if (game == "gc") { audioPath += "gc/"; }
     if (game == "ww") { audioPath += "ww/"; }
+    if (game == "cf") { audioPath += "cf/"; }
     if (game == "nl") { audioPath += "nl/" + weather + "/"; }
 
     audioPath += new Date().getHours();
@@ -28,7 +29,7 @@ function checkTime() {
 function updateClock() {
     clockDiv = document.getElementById("clock");
 
-    hour = pad(convertTime(new Date().getHours()));
+    hour = convertTime(new Date().getHours());
     minute = pad(new Date().getMinutes());
     second = pad(new Date().getSeconds());
 
