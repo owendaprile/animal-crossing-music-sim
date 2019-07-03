@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab:700&display=swap");
+#container #select-container, #container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  font-family: "Josefin Slab", serif;
+  font-size: 20px;
+}
+
+#container {
+  padding: 20px;
+  flex-direction: column;
+  background-image: url("../img/clock-bkg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#container #clock {
+  padding: 20px;
+  margin-top: 5px;
+  font-size: 100px;
+  color: #008584;
+  text-shadow: 2px 2px white;
+  background-color: #fbe4ae;
+  border: none;
+  border-style: round;
+  border-radius: 80px;
+  box-shadow: 3px 10px #e2cc9b inset;
+  width: 300px;
+  text-align: center;
+}
+#container #select-container {
+  flex-direction: row;
+  margin-top: 5px;
+}
+#container #select-container select {
+  font-family: "Josefin Slab", serif;
+  font-size: 15px;
+  padding: 10px;
+  margin: 20px;
+  background-color: #fbe4ae;
+  color: #553a25;
+  border: none;
+  border-style: round;
+  border-radius: 20px;
+  line-height: 1.3em;
+  box-shadow: 3px 5px #e2cc9b inset;
+}
+#container audio {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,3 +1,4 @@
 .git/
 .vscode/
-static/css/style.css*
+static/css/style.css.map
+static/css/style.scss
