@@ -1,7 +1,7 @@
 function startPlayer(game, weather) {
     player = document.getElementById("player");
 
-    audioPath = "audio/"
+    audioPath = "static/audio/"
 
     if (game == "gc") { audioPath += "gc/"; }
     if (game == "ww") { audioPath += "ww/"; }
@@ -31,9 +31,8 @@ function updateClock() {
 
     hour = convertTime(new Date().getHours());
     minute = pad(new Date().getMinutes());
-    second = pad(new Date().getSeconds());
 
-    clockDiv.innerText = `${hour}:${minute}:${second}`
+    clockDiv.innerText = `${hour}:${minute}`
 }
 
 function getGame() { return document.getElementById("game-selector").value; }

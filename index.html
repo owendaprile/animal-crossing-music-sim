@@ -6,34 +6,41 @@
     <meta charset="UTF-8">
     <title>Animal Crossing Music Simulator</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/site.webmanifest">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel='stylesheet' href='static/css/style.css'>
+    <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon-16x16.png">
+    <link rel="manifest" href="static/img/site.webmanifest">
+    <link rel="mask-icon" href="static/img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/img/favicon.ico">
     <meta name="msapplication-TileColor" content="#00a300">
-    <meta name="msapplication-config" content="img/browserconfig.xml">
+    <meta name="msapplication-config" content="static/img/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
     <div id="container">
-        <select id="game-selector" onchange="updatePlayer()">
-            <option value=" " selected>Select game</option>
-            <option value="gc">GameCube</option>
-            <option value="ww">Wild World</option>
-            <option value="cf">City Folk</option>
-            <option value="nl">New Leaf</option>
-        </select>
-        <select id="weather-selector" onchange="updatePlayer()" disabled>
-            <option value="normal" selected>Clear</option>
-            <option value="rain">Rainy</option>
-            <option value="snow">Snowy</option>
-        </select>
         <div id="clock"></div>
+        <div id="select-container">
+            <select id="game-selector" onchange="updatePlayer()">
+                <option value=" " selected>Select game</option>
+                <option value="gc">GameCube</option>
+                <option value="ww">Wild World</option>
+                <option value="cf">City Folk</option>
+                <option value="nl">New Leaf</option>
+            </select>
+            <select id="weather-selector" onchange="updatePlayer()" disabled>
+                <option value="normal" selected>Clear</option>
+                <option value="rain">Rainy</option>
+                <option value="snow">Snowy</option>
+            </select>
+        </div>
+
+        
         <audio id="player" controls="true" autoplay="true" loop="true"></audio>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/index.js"></script>
 </body>
 

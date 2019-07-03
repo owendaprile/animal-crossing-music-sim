@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:700&display=swap');
+
+// variables
+$josefin-slab: 'Josefin Slab', serif;
+
+$base-light: rgb(251, 228, 174);
+$inset-shadow: rgb(226, 204, 155);
+$text-dark: rgb(85, 58, 37);
+$clock-text: rgb(0, 133, 132);
+
+
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%center-elem {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    font-family: $josefin-slab;
+    font-size: 20px;
+}
+
+#container {
+    @extend %flex-center;
+    @extend %center-elem;
+    padding: 20px;
+    flex-direction: column;
+    background-image: url('../img/clock-bkg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    #clock {
+        padding: 20px;
+        margin-top: 5px;
+        font-size: 100px;
+        color: $clock-text;
+        text-shadow: 2px 2px white;
+        background-color: $base-light;
+        border: none;
+        border-style: round;
+        border-radius: 80px;
+        box-shadow: 3px 10px $inset-shadow inset;
+        width: 300px;
+        text-align: center;
+
+    }
+    #select-container {
+        @extend %flex-center;
+        flex-direction: row;
+        margin-top: 5px;
+        select {
+            font-family: $josefin-slab;
+            font-size: 15px;
+            padding: 10px;
+            margin: 20px;
+            background-color: $base-light;
+            color: $text-dark;
+            border: none;
+            border-style: round;
+            border-radius: 20px;
+            line-height: 1.3em;
+            box-shadow: 3px 5px $inset-shadow inset;
+        }
+    }
+    audio {
+        display: none;
+    }
+}
+
+
