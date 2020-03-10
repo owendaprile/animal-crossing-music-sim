@@ -46,7 +46,27 @@ function updatePlayer() {
     if (game != "nl") { document.getElementById("weather-selector").disabled = true; }
     else { document.getElementById("weather-selector").disabled = false; }
 
+    updateGrass();
+
     startPlayer(game, weather);
+}
+
+function updateGrass() {
+    weather = getWeather()
+
+    let imageLink = "url(\"static/img/grass/grass-"
+
+    if (weather === "normal") {
+        imageLink += weather
+    } else if (weather === "rain") {
+        imageLink += "normal"
+    } else if (weather === "snow") {
+        imageLink += weather
+    }
+
+    imageLink += ".png\")"
+
+    document.body.style.backgroundImage = imageLink
 }
 
 function main() {
@@ -55,6 +75,7 @@ function main() {
 
     startPlayer(game, weather);
     updateClock();
+    // updateGrass();
 
     prevHour = new Date().getHours();
     setInterval(checkTime, 500);
