@@ -75,7 +75,7 @@ function main() {
 
     startPlayer(game, weather);
     updateClock();
-    // updateGrass();
+    updateGrass();
 
     prevHour = new Date().getHours();
     setInterval(checkTime, 500);
