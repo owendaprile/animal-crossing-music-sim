@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Animal Crossing Music</title>
@@ -17,31 +15,25 @@
     <meta name="msapplication-config" content="static/img/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 </head>
-
 <body>
-    <div id="container">
-        <div id="clock"></div>
-        <div id="select-container">
-            <select id="game-selector" onchange="updatePlayer()">
-                <option value=" " selected>Select game</option>
-                <option value="gc">GameCube</option>
-                <option value="ww">Wild World</option>
-                <option value="cf">City Folk</option>
-                <option value="nl">New Leaf</option>
-            </select>
-            <select id="weather-selector" onchange="updatePlayer()" disabled>
-                <option value="normal" selected>Clear</option>
-                <option value="rain">Rainy</option>
-                <option value="snow">Snowy</option>
-            </select>
-        </div>
-
-
-        <audio id="player" controls="true" loop="true"></audio>
+<div id="container">
+    <div id="clock"></div>
+    <div id="select-container">
+        <select id="game-selector" onchange="updatePlayer()">
+            <option value=" " selected>Select game</option>
+            <option value="gc">GameCube</option>
+            <option value="ww">Wild World</option>
+            <option value="cf">City Folk</option>
+            <option value="nl">New Leaf</option>
+        </select>
+        <select id="weather-selector" onchange="updatePlayer()" disabled>
+            <option value="normal" selected>Clear</option>
+            <option value="rain">Rainy</option>
+            <option value="snow">Snowy</option>
+        </select>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="js/index.js"></script>
+    <audio id="player" controls loop=></audio>
+</div>
+<script src="js/index.js"></script>
 </body>
-
 </html>
