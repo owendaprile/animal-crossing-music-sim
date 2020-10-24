@@ -1,7 +1,7 @@
 function startPlayer(game, weather) {
-    player = document.getElementById("player");
+    let player = document.getElementById("player");
 
-    audioPath = "static/audio/" + game + "/";
+    let audioPath = "static/audio/" + game + "/";
 
     if (game === "nl") { audioPath += weather + "/"; }
 
@@ -15,7 +15,7 @@ function startPlayer(game, weather) {
 
 let prevHour;
 function checkTime() {
-    currentHour = new Date().getHours();
+    let currentHour = new Date().getHours();
 
     if (currentHour != prevHour) {
         updatePlayer();
@@ -23,11 +23,15 @@ function checkTime() {
     }
 }
 
-function updateClock() {
-    clockDiv = document.getElementById("clock");
+function pad(n) { return n < 10 ? '0' + n : n }
 
-    hour = convertTime(new Date().getHours());
-    minute = pad(new Date().getMinutes());
+function convertTime(time) { return time > 12 ? time - 12 : time }
+
+function updateClock() {
+    let clockDiv = document.getElementById("clock");
+
+    let hour = convertTime(new Date().getHours());
+    let minute = pad(new Date().getMinutes());
 
     clockDiv.innerText = `${hour}:${minute}`
 }
@@ -37,8 +41,8 @@ function getGame() { return document.getElementById("game-selector").value; }
 function getWeather() { return document.getElementById("weather-selector").value; }
 
 function updatePlayer() {
-    game = getGame();
-    weather = getWeather();
+    let game = getGame();
+    let weather = getWeather();
 
     if (game != "nl") { document.getElementById("weather-selector").disabled = true; }
     else { document.getElementById("weather-selector").disabled = false; }
@@ -49,7 +53,7 @@ function updatePlayer() {
 }
 
 function updateGrass() {
-    weather = getWeather()
+    let weather = getWeather()
 
     let imageLink = "url(\"static/img/grass/grass-"
 
@@ -67,8 +71,8 @@ function updateGrass() {
 }
 
 function main() {
-    game = getGame();
-    weather = getWeather();
+    let game = getGame();
+    let weather = getWeather();
 
     startPlayer(game, weather);
     updateClock();
@@ -80,7 +84,3 @@ function main() {
 }
 
 window.onload = main;
-
-function pad(n) { return n < 10 ? '0' + n : n }
-
-function convertTime(time) { return time > 12 ? time - 12 : time }
