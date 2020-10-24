@@ -10,7 +10,15 @@ function startPlayer(game, weather) {
 
     player.src = audioPath
 
-    player.load();
+    // Start playback. If it is blocked by the browser, reset the game selector.
+    // Since Chrome and Firefox only allow playback of audio after the user has
+    // interacted with the page, audio will be allowed to play on selection of a game.
+    console.debug(`Starting playback of ${audioPath}`);
+    player.play()
+        .catch((err) => {
+            console.debug("Playback failed:\n" + err);
+            document.getElementById("game-selector").selectedIndex = 0;
+        })
 }
 
 let prevHour;
