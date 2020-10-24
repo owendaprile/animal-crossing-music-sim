@@ -17,7 +17,7 @@ let prevHour;
 function checkTime() {
     let currentHour = new Date().getHours();
 
-    if (currentHour != prevHour) {
+    if (currentHour !== prevHour) {
         updatePlayer();
         prevHour = currentHour;
     }
@@ -44,8 +44,7 @@ function updatePlayer() {
     let game = getGame();
     let weather = getWeather();
 
-    if (game != "nl") { document.getElementById("weather-selector").disabled = true; }
-    else { document.getElementById("weather-selector").disabled = false; }
+    document.getElementById("weather-selector").disabled = game !== "nl";
 
     updateGrass();
 
