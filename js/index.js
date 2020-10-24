@@ -1,6 +1,11 @@
 function startPlayer(game, weather) {
     let player = document.getElementById("player");
 
+    if (game === "ns") {
+        if (!player.paused) player.pause();
+        return;
+    }
+
     let audioPath = "static/audio/" + game + "/";
 
     if (game === "nl") { audioPath += weather + "/"; }
