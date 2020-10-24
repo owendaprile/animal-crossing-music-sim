@@ -1,12 +1,9 @@
 function startPlayer(game, weather) {
     player = document.getElementById("player");
 
-    audioPath = "static/audio/"
+    audioPath = "static/audio/" + game + "/";
 
-    if (game == "gc") { audioPath += "gc/"; }
-    if (game == "ww") { audioPath += "ww/"; }
-    if (game == "cf") { audioPath += "cf/"; }
-    if (game == "nl") { audioPath += "nl/" + weather + "/"; }
+    if (game === "nl") { audioPath += weather + "/"; }
 
     audioPath += new Date().getHours();
     audioPath += ".mp3";
