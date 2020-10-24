@@ -18,7 +18,8 @@ body {
 }
 
 #container {
-  padding: 20px;
+  padding: 40px;
+  padding-top: 30px;
   flex-direction: column;
   background-image: url("../img/clock-bkg.png");
   background-size: contain;
