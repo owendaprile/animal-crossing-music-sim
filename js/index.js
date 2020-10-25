@@ -72,7 +72,7 @@ function updatePlayer() {
 }
 
 function gameSupportsWeather(game) {
-    return (game === "ww" || game === "cf" || game === "nl")
+    return (game === "ww" || game === "cf" || game === "nl" || game === "nh")
 }
 
 function updateGrass() {
