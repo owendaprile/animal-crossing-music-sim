@@ -11,7 +11,7 @@ function startPlayer(game, weather) {
     if (game === "nl") { audioPath += weather + "/"; }
 
     audioPath += new Date().getHours();
-    audioPath += ".mp3";
+    audioPath += ".opus";
 
     player.src = audioPath
 
