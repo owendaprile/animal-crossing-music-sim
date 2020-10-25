@@ -5,9 +5,13 @@ function startPlayer(game, weather) {
         if (!player.paused) player.pause();
         return;
     }
-
-    let audioPath = "static/audio/" + game + "/";
-    if (game === "nl") { audioPath += weather + "/"; }
+    let audioPath;
+    if (game === "ww" || game === "cf") {
+        audioPath = "static/audio/ww-cf/";
+    } else {
+        audioPath = "static/audio/" + game + "/";
+    }
+    if (gameSupportsWeather(game)) { audioPath += weather + "/"; }
 
     audioPath += new Date().getHours();
     audioPath += ".opus";
@@ -57,14 +61,18 @@ function updatePlayer() {
     let weather = getWeather();
 
     let event = game;
-    if (game === "nl") { event += ", " + weather; }
+    if (gameSupportsWeather(game)) { event += ", " + weather; }
     umami.trackEvent(event, "game");
 
-    document.getElementById("weather-selector").disabled = game !== "nl";
+    // console.debug("Should the weather selector be enabled?", gameSupportsWeather(game));
+    document.getElementById("weather-selector").disabled = !gameSupportsWeather(game);
 
     updateGrass();
-
     startPlayer(game, weather);
+}
+
+function gameSupportsWeather(game) {
+    return (game === "ww" || game === "cf" || game === "nl")
 }
 
 function updateGrass() {
