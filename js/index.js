@@ -59,6 +59,8 @@ function updatePlayer() {
 
     document.getElementById("weather-selector").disabled = game !== "nl";
 
+    umami.trackEvent(`'${game}', '${weather}'`, "music");
+
     updateGrass();
 
     startPlayer(game, weather);
