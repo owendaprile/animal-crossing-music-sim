@@ -7,7 +7,6 @@ function startPlayer(game, weather) {
     }
 
     let audioPath = "static/audio/" + game + "/";
-
     if (game === "nl") { audioPath += weather + "/"; }
 
     audioPath += new Date().getHours();
